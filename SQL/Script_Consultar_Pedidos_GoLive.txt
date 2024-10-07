@@ -1,0 +1,33 @@
+
+
+--MAXPEDIDO
+
+select codfilial, codusur, nome, count(numped) from (
+select p.codfilial, p.codusur, u.nome, p.importado, p.numped, p.numpedrca, p.dtinclusao, p.idpedidonv 
+from pcpedcfv p 
+inner join pcusuari u on (p.codusur=u.codusur)
+where 1=1
+AND TRUNC (p.dtinclusao) = '17-09-2024'
+AND p.IDPEDIDONV IS NOT NULL
+AND p.codusur IN  (select codusur from pcusuari where codfilial in ('01','04') and dttermino is null) 
+and importado in (2)
+ORDER BY CODUSUR
+)
+group by codfilial, codusur, nome
+
+
+------------------------------------------------------------------------
+
+--PEDIDO DE VENDA
+
+select codfilial, codusur, nome, count(numped) from (
+select p.codfilial, p.codusur, u.nome, p.importado, p.numped, p.numpedrca, p.dtinclusao, p.idpedidonv 
+from pcpedcfv p 
+inner join pcusuari u on (p.codusur=u.codusur)
+where 1=1
+AND TRUNC (p.dtinclusao) = '17-09-2024'
+AND p.IDPEDIDONV IS NULL
+AND p.codusur IN  (select codusur from pcusuari where codfilial in ('01','04') and dttermino is null)       
+ORDER BY CODUSUR
+)
+group by codfilial, codusur, nome
