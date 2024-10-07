@@ -7,8 +7,9 @@ AND data >= '01-04-2024'
  
 --Consulta 561 - (coddesconto campo da tabela)
 SELECT CODDESCONTO, CODUSUR, CODCLI, CODPROD, DTINICIO, DTFIM, CODFILIAL, PERCDESC, NUMREGIAO FROM pcdesconto 
-WHERE DTFIM BETWEEN '01-08-2024' AND '01-08-2030'
--- AND codfilial = '01'
+WHERE 1 = 1
+AND DTFIM BETWEEN '01-01-2024' AND '01-10-2030'
+AND codfilial = '13'
 AND codusur is not null
 AND codcli is not null
 AND codprod is not null
