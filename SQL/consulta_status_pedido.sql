@@ -6,7 +6,7 @@ SELECT
     MIN(p.numped) AS numped,
     MIN(p.numpedrca) AS numpedrca,      
     MIN(p.idpedidonv) AS idpedidonv,
-    MIN(p.dtinclusao) AS dtinclusao,
+    MAX(p.dtinclusao) AS dtinclusao,
     MIN(p.importado) AS importado
 FROM
     pcpedcfv p
