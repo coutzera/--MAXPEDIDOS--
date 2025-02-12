@@ -1,42 +1,24 @@
-select
-    p.codfilial,
+SELECT
+    MIN(p.codfilial) AS codfilial,
     p.codusur,
     u.nome,
-    p.importado,
-    p.numped,
-    p.numpedrca,
-    p.dtinclusao,
-    p.idpedidonv
-from
+    MIN(p.importado) AS importado,
+    MIN(p.numped) AS numped,
+    MIN(p.numpedrca) AS numpedrca,      
+    MIN(p.idpedidonv) AS idpedidonv,
+    MIN(p.dtinclusao) AS dtinclusao,
+    MIN(p.importado) AS importado
+FROM
     pcpedcfv p
-    inner join pcusuari u on (p.codusur = u.codusur)
-where
-    1 = 1
-    AND TRUNC (p.dtinclusao) = '26-09-2024'
-    AND p.IDPEDIDONV IS NOT NULL
+    INNER JOIN pcusuari u ON p.codusur = u.codusur
+WHERE
+    TRUNC(p.dtinclusao) = TO_DATE('11-02-2025', 'DD-MM-YYYY')  
+    AND p.idpedidonv IS  NULL
+    AND p.importado IN (1, 2, 3, 4)
     AND p.codusur IN (
-        select
-            codusur
-        from
-            pcusuari
-        where
-            codfilial in (
-                '01',
-                '02',
-                '04',
-                '06',
-                '07',
-                '08',
-                '11',
-                '12',
-                '15',
-                '16',
-                '18'
-            )
-            and dttermino is null
+        SELECT codusur
+        FROM pcusuari
+        WHERE codfilial IN ('03', '09', '52', '53')
+        AND dttermino IS NULL
     )
-    and importado in (1)
-
--- 1 = pendente
--- 2 = importado (sucesso)
--- 3 = importado (com erro)
+GROUP BY p.codusur, u.nome;
