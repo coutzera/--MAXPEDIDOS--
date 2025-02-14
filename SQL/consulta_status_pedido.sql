@@ -2,17 +2,17 @@ SELECT
     MIN(p.codfilial) AS codfilial,
     p.codusur,
     u.nome,
-    MIN(p.importado) AS importado,
-    MIN(p.numped) AS numped,
-    MIN(p.numpedrca) AS numpedrca,      
-    MIN(p.idpedidonv) AS idpedidonv,
-    MAX(p.dtinclusao) AS dtinclusao,
-    MIN(p.importado) AS importado
+    COUNT(p.importado) AS QTD,
+    MIN(p.numped) AS PEDIDO_WINTHOR,
+    MIN(p.numpedrca) AS PEDIDO_RCA,      
+    MIN(p.idpedidonv) AS ID_PEDIDO,
+    MAX(p.dtinclusao) AS DATA,
+    MIN(p.importado) AS SITUACAO
 FROM
     pcpedcfv p
     INNER JOIN pcusuari u ON p.codusur = u.codusur
 WHERE
-    TRUNC(p.dtinclusao) = TO_DATE('11-02-2025', 'DD-MM-YYYY')  
+    TRUNC(p.dtinclusao) = TO_DATE('13-02-2025', 'DD-MM-YYYY')  
     AND p.idpedidonv IS  NULL
     AND p.importado IN (1, 2, 3, 4)
     AND p.codusur IN (
