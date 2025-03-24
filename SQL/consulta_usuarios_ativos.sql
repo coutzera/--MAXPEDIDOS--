@@ -16,3 +16,27 @@ FROM
 WHERE
     U.STATUS IN ('A', 'B')
     AND US.CODFILIAL IN ('05', '13', '14');
+
+
+
+
+--------------------------------------------------------------------------------------
+
+
+SELECT codfilial, codusur, NOME, dttermino  -- Liste todas as colunas necessárias aqui
+FROM (
+    SELECT codfilial, codusur, NOME, dttermino  -- Liste todas as colunas necessárias aqui
+    FROM pcusuari 
+    WHERE dttermino IS NULL
+      AND codusur NOT IN (
+          SELECT cod_cadrca 
+          FROM pcsuperv 
+          WHERE cod_cadrca IS NOT NULL
+      )
+      AND NOME NOT LIKE '%ECOMMERCE%'
+      AND NOME NOT LIKE '%DIRETA%'
+      AND NOME NOT LIKE '%ORFAO%'
+      AND NOME NOT LIKE '%USO EXCLUSIVO%'
+) usuarios_filtrados
+WHERE codfilial IN ('05', '10', '13', '14')
+ORDER BY codfilial;
