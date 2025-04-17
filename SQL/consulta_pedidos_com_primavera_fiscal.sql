@@ -1,25 +1,30 @@
+-- Consulta principal: Pedidos com benefício fiscal para clientes do tipo 'NRPA'
 SELECT
-    c.codemitente as SISTEMA,
+    c.codemitente AS sistema,
     p.*
 FROM
     pcpedi p
-    JOIN pcpedc c ON p.numped = c.numped
+    INNER JOIN pcpedc c ON p.numped = c.numped
 WHERE
     p.codcli IN (
-        --Bloco onde busca todos os clientes que tem o benefício
-        SELECT
-            codcli
-        FROM
-            pcclient
-        WHERE
-            tipoempresa = 'NRPA'
-            AND codfilialnf = '02'
-            --fim do block
+        SELECT codcli
+        FROM pcclient
+        WHERE tipoempresa = 'NRPA'
+          AND codfilialnf = '02'
     )
-    AND p.data > TO_DATE ('01-08-2024', 'DD-MM-YYYY')
-    --AND p.codprod = 2443 -- Procura por produto com benefício Fiscal
-    AND p.codusur = 19 -- Código do RCA
-    AND p.numped IN (19020114, 19019922) -- Aqui trocar o código dos pedidos
-    --19019922, 19020114
+    AND p.data > TO_DATE('01-04-2025', 'DD-MM-YYYY')
+    AND p.codusur = 19
+    -- Filtros opcionais (remova os comentários caso necessário)
+    -- AND p.codprod = 688
+    -- AND p.numped IN (19020114, 19019922)
+    -- AND p.percacrescbenffis = 6
 ORDER BY
     p.codprod;
+
+-- Verificação de origem de preço para o mesmo cenário de benefício fiscal
+SELECT *
+FROM pcorigempreco
+WHERE data = TO_DATE('01-04-2025', 'DD-MM-YYYY')
+  AND codfilial = '02'
+  AND percacrescbenffis = 6
+ORDER BY numped;
