@@ -25,4 +25,4 @@ WHERE
 --    AND p.codprod = 688              -- (Opcional) Filtro por código do produto
 --    AND p.numped IN (19020114, 19019922) -- (Opcional) Filtro por número do pedido
 ORDER BY
-    p.codprod;                         -- Ordena o resultado pelo código do produto
+    p.numped;                         -- Ordena o resultado pelo número do pedido
