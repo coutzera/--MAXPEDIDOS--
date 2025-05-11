@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "analytics-jobs-459418",
+  "private_key_id": "c576521500ec685a4cc92b200e57d5ed12a9cfd8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCmN8zACw2CL7M9\noz1HpJZ9Jv+GXWwWV2h/Em/zbC+/Uzw6ZX6lqbI536WrKQsfLgRpxnMyi2zUN2FZ\nNuwqs0fadDsjxggigGCY9IkpgrmdmNy933QEeJHFdzOFwW+MXN1PBurtQKhEOFGC\n2upFqUn+xhDZj6/EozF5byX/yT0//nRmTrXpGKwljEQr+pRthoOF7IisXPWrG+o5\nYWzyVUs8xzbFOG5gKxGV48x9Ef+dsqCQC+6xUt1oK0Cp5h94XAE5eZJC242WUK2w\nuhG1PRM3SxG9Y5rZHJMLHnzOv9HGQGqSZq/zDgBEV6yGV+AaV2IUBpvZ0r0aPNfo\nG6pqvD87AgMBAAECggEAN3e7fgKyOVWNrO4CjxvflFglQUN/xFza5DzU2xipPmGa\nYapo/wOIFEQL1vhVW8xRcLLm0mEwqgjpFYp8eStmuQG8ko2NPWY11hUUiKO1KWBP\nmZUt9CgADTNgICyS+vYqbCrUzuOaw1k/6jj/oMuDg9+408FdWHNVGT78IUWYiPfp\nJHMrx2T5H7YfjHg14lg/YjIlkarQQczIr9NSHrZueNRM5R+ZUaLugl6w94m4gjSg\nSXnGItY/bIHepXd8G7gk1M8hhQfy/MZdGSEV351n2kXC2JvcyZ7lmx6aCXwd9pFe\nyTlQ9NBTKTIn4wRTB9zsEcdOxoTzyW8xuA09ITFswQKBgQDZooKSGXBy3E3ZvrhE\n9lYrGLuCy9Nd4Hs/SOJ2cJqbVQJ05uMhLXCRT+zuusMnHG4ed85utTyZdiYkNmpf\nq3CJd/RkRUMs5mEplvPCOolHwtDN+IggVm+n/h83AuO0so0E3GxpLWppifS9hX1A\n9wdYjg5+8egdD54B36msnZxCEQKBgQDDhO9e8N5eFI3nq0cbBK8MncZjaA9FYJww\nxfs6v+cPhliZ9ZkYRlIWBMYb16ybQzEMPgBmz4f+SePUnD2TDD5oIS2kTuh3eyy2\nyqSiNLAyF8Y4dQRue7PhW7/ipkKFIZFjetcQaPaI09egBipz6z5i1A1pFmoATaKF\ngfv8Xj5giwKBgF9vrzhoJXKI/y6kPuQm7gR6FQg3X5oELafDy2NK39GMBsbC1Qkg\nhwOB/BF4HsoQ4o1D1mef3FIjiHhK0HzhjjkKPEaYROv0ntkBFCWxS7AHU09vVCpy\nHQabHo8eGkKMJeDi1DuPKeHcGFHfrtyFN1hy+xJZ/IJ57b0+moZSm0oxAoGAGo7G\nDPle2xyjoeJMCEl8lZQgzIPn/x5+WMmrtHE4q40uH8uSfg+fOspvNnz3PyfDU8xg\nNZbe/BWBUvHeE0lIeNB46KanQQOEMVgZQMczX7qG/Eg4z+ERr/zMdbbrtjW3D/Ix\noFMBmdhco6nyvkgn8zimka2vvFbPSp87YS5T/r0CgYBt1pmKfDZUrZb/mUCS5utg\nxXqX0CvsnJ0BsC9qvUGw5eoLq/hC4oUFnYcmMoXxndDwjeqpAbhdwx+gAQJe8phY\nPGEHMWezly6hb+uy0hS9FyiTPawk3VJJtAsU/1DibCMMOE9OCushemno0x5QwlSW\niUOs0oIuRC1wMqDKDIxHag==\n-----END PRIVATE KEY-----\n",
+  "client_email": "job-analysis-connection@analytics-jobs-459418.iam.gserviceaccount.com",
+  "client_id": "105265249987262018222",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/job-analysis-connection%40analytics-jobs-459418.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
